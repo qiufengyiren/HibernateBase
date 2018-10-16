@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+
+<!--
+id:节点   设置数据库的主键
+ name：主键的名称（实体类的属性）
+ column：数据库中的字段名称 可以不写 默认是name
+ generator:节点 主键生成策略
+  01：数据库创建
+  02：hibernate框架创建
+  03：程序员手动创建assinged
+  Student stu=new Studnet();
+  stu.setName("小黑");
+  session.save();
+
+  identity  针对于mysql数据库
+  sequence：针对于Oracle数据库
+  increment:select max（id）from student；
+  Uid： 针对不同的服务器设置保证主键唯一
+  name：
+-->
+
+<hibernate-mapping package="com.dzq.bean">
+    <class  name="Student" table="stu">
+        <id name="id" column="id">
+            <generator class="increment"/><!--主键生成策略-->
+        </id>
+        <property name="name"  column="name"/>
+    </class>
+</hibernate-mapping>

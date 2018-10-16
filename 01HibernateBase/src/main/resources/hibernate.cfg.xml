@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!--设置连接数据库的四要素-->
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/s229</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">123456</property>
+        <!--是否显示SQL语句-->
+        <property name="hibernate.show_sql">true</property>
+        <!--是否格式化SQL语句-->
+        <property name="hibernate.format_sql">true</property>
+
+
+
+        <!--根据nbm文件的配置生成对应的数据库表
+        create：每次运行都会删除上次生成的表 创建新表
+        update：如果没表会创建新表 有表增加数据
+        create-drop：每次运行都会删除上次生成的表前提是SessionFactory要关闭
+        validate:每次运行都会检查hbm文件的映射关系如果不匹配抛出异常
+        -->
+        <!--记载hbm文件的配置生成对应的数据库表-->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        <mapping resource="com/dzq/bean/Student.hbm.xml"></mapping>
+    </session-factory>
+</hibernate-configuration>

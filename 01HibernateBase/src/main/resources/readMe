@@ -1,0 +1,26 @@
+01 数据源
+02：管理映射文件（Xxx.hbm.xml）
+03：设置基本信息（是否显示SQL ，是否格式化SQL）
+04：设置缓存
+05：hbm2ddl的设置
+
+
+Xxx.hbm.xml
+01：实体类和表的对应关系
+02：属性和字段的对应关系
+03：对象之间的对应关系
+04：缓存的设置
+05：SQL或者SQL语句的书写
+
+1：Configuration类
+加载hibernate.cfg.xml核心配置文件，启动hibernate获取SessionFactroy
+2：Session-Factory
+创建Session对象！ 在一份项目中有一个SessionFactory对象即可（单例）
+3：Session
+负责对象的CRUD操作！ 默认的线程是不安全的
+4：Transaction
+针对于事务的操作
+5:Query查询接口 SQL hql
+针对于数据库的查询
+6:Critical 查询接口
+完全面向对象
